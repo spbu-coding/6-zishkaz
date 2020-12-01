@@ -106,16 +106,14 @@ int read_from_file(strings_array_t line_array, array_size_t lines_count) {
         abort_program("Couldn't open the source file!", line_array, lines_count);
         return -1;
     }
-    char buf[MAX_INPUT_STRING_SIZE];
     for (unsigned i = 0; i < lines_count; i++) {
 
-        if(fgets(buf, MAX_INPUT_STRING_SIZE, input) == NULL) {
+        if(fgets(line_array[i], MAX_INPUT_STRING_SIZE, input) == NULL) {
 
             abort_program("Number of lines is more than actual one!", line_array, lines_count);
             return -1;
         }
         if(strchr(buf, '\n') == NULL) strcat(buf, "\n");
-        strcpy(line_array[i], buf);
     }
     fclose(input);
     return 0;
