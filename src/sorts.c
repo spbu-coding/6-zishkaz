@@ -139,8 +139,8 @@ void radix(strings_array_t line_array, array_size_t array_size, comparator_func_
     }
     for (unsigned i = 0; i < array_size; i++) {
 
-        lines_via_symbol[line_array[i][radix_num]][symbols[line_array[i][radix_num]]] = i;
-        symbols[line_array[i][radix_num]]++;
+        lines_via_symbol[(unsigned) line_array[i][radix_num]][symbols[(unsigned) line_array[i][radix_num]]] = i;
+        symbols[(unsigned) line_array[i][radix_num]]++;
     }
 
     unsigned k = 0;
