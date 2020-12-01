@@ -10,9 +10,6 @@
 
 typedef void (*sorting_func_t)(strings_array_t, array_size_t, comparator_func_t);
 
-char *output_name;
-char *input_name;
-
 int asc_comparator(const char *, const char *);
 
 int des_comparator(const char *, const char *);

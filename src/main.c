@@ -4,6 +4,9 @@
 
 #define ERROR_CODE -1
 
+char *output_name;
+char *input_name;
+
 int main(int argc, char **argv) {
 
 

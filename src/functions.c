@@ -7,6 +7,9 @@ static char *comparators[COMPARATORS_COUNT] = {"asc", "des"};
 static comparator_func_t comparators_functions[COMPARATORS_COUNT] = {&asc_comparator, &des_comparator};
 static sorting_func_t sorting_functions[SORTS_COUNT] = {&bubble, &insertion, &merge, &quick, &radix};
 
+extern char *output_name;
+extern char *input_name;
+
 int asc_comparator(const char *temp1, const char *temp2) {
 
     return strcmp(temp1, temp2) > 0;
