@@ -107,7 +107,7 @@ int read_from_file(strings_array_t line_array, array_size_t lines_count) {
         return -1;
     }
     char buf[MAX_INPUT_STRING_SIZE];
-    for (int i = 0; i < lines_count; i++) {
+    for (unsigned i = 0; i < lines_count; i++) {
 
         if(fgets(buf, MAX_INPUT_STRING_SIZE, input) == NULL) {
 
