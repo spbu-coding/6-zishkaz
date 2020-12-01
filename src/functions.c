@@ -113,7 +113,7 @@ int read_from_file(strings_array_t line_array, array_size_t lines_count) {
             abort_program("Number of lines is more than actual one!", line_array, lines_count);
             return -1;
         }
-        if(strchr(buf, '\n') == NULL) strcat(buf, "\n");
+        if(strchr(line_array[i], '\n') == NULL) strcat(line_array[i], "\n");
     }
     fclose(input);
     return 0;
