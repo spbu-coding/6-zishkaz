@@ -2,7 +2,7 @@
 
 void bubble(strings_array_t line_array, array_size_t array_size, comparator_func_t comparator) {
 
-    for (unsigned i = 0; i < array_size - 1; i++) {
+    for (unsigned i = 0; i + 1 < array_size; i++) {
 
         for (unsigned j = 0; j < array_size - 1; j++) {
 
@@ -16,7 +16,7 @@ void bubble(strings_array_t line_array, array_size_t array_size, comparator_func
 
 void insertion(strings_array_t line_array, array_size_t array_size, comparator_func_t comparator) {
 
-    for (unsigned i = 0; i < array_size - 1; i++) {
+    for (unsigned i = 0; i + 1 < array_size; i++) {
 
         unsigned temp = i;
         for (unsigned j = i + 1; j < array_size; j++) {
