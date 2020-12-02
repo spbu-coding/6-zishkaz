@@ -24,7 +24,11 @@ int main(int argc, char **argv) {
     sorting_func_t sort = NULL;
     comparator_func_t comparator = NULL;
     if (args_solve(argv, &line_count, &sort, &comparator)) return ERROR_CODE;
-    if (line_count < 0) return ERROR_CODE;
+    if (line_count < 0) {
+        
+        fprintf(stderr, "Line count can't be negative!");
+        return ERROR_CODE;
+    }
     if (line_count == 0) {
 
         FILE *output = fopen(input_name, "w");
