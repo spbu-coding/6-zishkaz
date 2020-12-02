@@ -27,7 +27,7 @@ void swap(char **temp1, char **temp2) {
     *temp1 = buf;
 }
 
-int args_solve(char **argv, array_size_t *line_count, sorting_func_t *sorting_method, comparator_func_t *comparator) {
+int args_solve(char **argv, int *line_count, sorting_func_t *sorting_method, comparator_func_t *comparator) {
 
     char *temp = argv[1];
     *line_count = strtol(argv[1], &temp, 10);
