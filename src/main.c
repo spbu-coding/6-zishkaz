@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
         fprintf(stderr, "Too many parameters on enter!");
         return ERROR_CODE;
     }
-    array_size_t line_count;
+    int line_count;
     sorting_func_t sort = NULL;
     comparator_func_t comparator = NULL;
     if (args_solve(argv, &line_count, &sort, &comparator)) return ERROR_CODE;
