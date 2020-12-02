@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
         abort_program("Couldn't allocate memory in main!", line_array, line_count);
         return ERROR_CODE;
     }
-    for (unsigned i = 0; i < line_count; i++) {
+    for (int i = 0; i < line_count; i++) {
 
         line_array[i] = malloc(MAX_INPUT_STRING_SIZE);
         if (line_array[i] == NULL) {
