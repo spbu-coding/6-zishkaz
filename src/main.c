@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
     sorting_func_t sort = NULL;
     comparator_func_t comparator = NULL;
     if (args_solve(argv, &line_count, &sort, &comparator)) return ERROR_CODE;
+    if (line_count < 1) return ERROR_CODE;
     strings_array_t line_array = malloc(line_count * sizeof(char *));
     if (line_array == NULL) {
 
@@ -40,7 +41,7 @@ int main(int argc, char **argv) {
         }
     }
     if (read_from_file(line_array, line_count)) return ERROR_CODE;
-    if (line_count > 0) sort(line_array, line_count, comparator);
+    sort(line_array, line_count, comparator);
     print_to_file(line_array, line_count);
     free_all(line_array, line_count);
     return 0;
