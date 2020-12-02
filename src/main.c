@@ -25,13 +25,20 @@ int main(int argc, char **argv) {
     comparator_func_t comparator = NULL;
     if (args_solve(argv, &line_count, &sort, &comparator)) return ERROR_CODE;
     if (line_count < 0) return ERROR_CODE;
+    if (line_count == 0) {
+
+        FILE *output = fopen(input_name, "w");
+        fputs("\n", output);
+        fclose(output);
+        return 0;
+    }
     strings_array_t line_array = malloc(line_count * sizeof(char *));
     if (line_array == NULL) {
 
         abort_program("Couldn't allocate memory in main!", line_array, line_count);
         return ERROR_CODE;
     }
-    for (unsigned i = 0; i < line_count; i++) {
+    for (int i = 0; i < line_count; i++) {
 
         line_array[i] = malloc(MAX_INPUT_STRING_SIZE);
         if (line_array[i] == NULL) {

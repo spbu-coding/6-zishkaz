@@ -2,7 +2,7 @@
 
 void bubble(strings_array_t line_array, array_size_t array_size, comparator_func_t comparator) {
 
-    for (unsigned i = 0; i + 1 < array_size; i++) {
+    for (unsigned i = 0; i < array_size - 1; i++) {
 
         for (unsigned j = 0; j < array_size - 1; j++) {
 
@@ -16,7 +16,7 @@ void bubble(strings_array_t line_array, array_size_t array_size, comparator_func
 
 void insertion(strings_array_t line_array, array_size_t array_size, comparator_func_t comparator) {
 
-    for (unsigned i = 0; i + 1 < array_size; i++) {
+    for (unsigned i = 0; i < array_size - 1; i++) {
 
         unsigned temp = i;
         for (unsigned j = i + 1; j < array_size; j++) {
@@ -123,13 +123,13 @@ void radix(strings_array_t line_array, array_size_t array_size, comparator_func_
         }
     }
     if (radix_num == -1) return; //Nothing to sort
-    unsigned symbols[256] = {0};
-    unsigned **lines_via_symbol = malloc(256 * sizeof(unsigned *));
+    unsigned symbols[128] = {0};
+    unsigned **lines_via_symbol = malloc(128 * sizeof(unsigned *));
     if (lines_via_symbol == NULL) {
 
         abort_program("Couldn't allocate memory while sorting!", line_array, array_size);
     }
-    for (unsigned i = 0; i < 256; i++) {
+    for (unsigned i = 0; i < 128; i++) {
 
         lines_via_symbol[i] = malloc(array_size * sizeof(unsigned));
         if (lines_via_symbol[i] == NULL) {
@@ -151,7 +151,7 @@ void radix(strings_array_t line_array, array_size_t array_size, comparator_func_
     }
     if (comparator("b", "a")) {
 
-        for (int i = 0; i < 256; i++) {
+        for (int i = 0; i < 128; i++) {
 
             if (symbols[i] > 0) {
 
@@ -175,7 +175,7 @@ void radix(strings_array_t line_array, array_size_t array_size, comparator_func_
         }
     } else {
 
-        for (int i = 255; i >= 0; i--) {
+        for (int i = 127; i >= 0; i--) {
 
             if (symbols[i] > 0) {
 
@@ -198,7 +198,7 @@ void radix(strings_array_t line_array, array_size_t array_size, comparator_func_
             }
         }
     }
-    for (unsigned i = 0; i < 256; i++) free(lines_via_symbol[i]);
+    for (unsigned i = 0; i < 128; i++) free(lines_via_symbol[i]);
     free(lines_via_symbol);
     memcpy(line_array, line_array_copy, array_size * sizeof(char *));
     free(line_array_copy);

@@ -14,7 +14,7 @@ int asc_comparator(const char *, const char *);
 
 int des_comparator(const char *, const char *);
 
-int args_solve(char **, array_size_t *, sorting_func_t *, comparator_func_t *);
+int args_solve(char **, int *, sorting_func_t *, comparator_func_t *);
 
 void free_all(strings_array_t, array_size_t);
 
