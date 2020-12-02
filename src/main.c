@@ -28,6 +28,7 @@ int main(int argc, char **argv) {
     if (line_array == NULL) {
 
         abort_program("Couldn't allocate memory in main!", line_array, line_count);
+        return ERROR_CODE;
     }
     for (unsigned i = 0; i < line_count; i++) {
 
@@ -35,6 +36,7 @@ int main(int argc, char **argv) {
         if (line_array[i] == NULL) {
 
             abort_program("Couldn't allocate memory in main!", line_array, line_count);
+            return ERROR_CODE;
         }
     }
     if (read_from_file(line_array, line_count)) return ERROR_CODE;
