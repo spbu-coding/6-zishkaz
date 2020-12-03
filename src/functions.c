@@ -110,6 +110,7 @@ int read_from_file(strings_array_t line_array, array_size_t lines_count) {
 
         if(fgets(line_array[i], MAX_INPUT_STRING_SIZE, input) == NULL) {
 
+            fprintf(stderr, "Error while reading line %d/%lu\n", i,  lines_count);
             abort_program("Number of lines is more than actual one!", line_array, lines_count);
             return -1;
         }
